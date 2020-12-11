@@ -1,37 +1,63 @@
-## Welcome to GitHub Pages
+# Flask Contact Book App
+This is a python-flask contact book app that managed the contact information data in the **MySQL** Database. You can **edit, delete, add, show a table of contacts, and also get the HTML table code of the contacts table**. Show the contact info in the dashboard and add many kinds of information such as email, tel, address.
+## Requirements
 
-You can use the [editor on GitHub](https://github.com/RF-Fahad-Islam/Contact-Book-Flask-App/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+### Packages or Modules
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install flask.
+```
+pip install flask
+pip install flask-sqlalchemy
+```
+### Imports
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+**Some Built-in modules used on this program Such as ```datetime```**
+```
+from flask import Flask, render_template, request, redirect
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+## Usage
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/RF-Fahad-Islam/Contact-Book-Flask-App/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```python
+1. Add contacts with name, phone number, email, address.
+2. Edit contacts information.
+3. Delete contact.
+4. Show contacts in a table.
+5. Get the HTML table code of the contacts information for plug-in
+```
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-### Support or Contact
+**For guaranteed pull request:**
+```
+1 . Describe an issue with the pull request.
+2. Adding or suggesting new features
+3. Improve the Programme.
+4. Fix the Bugs and described
+5. Adding functions to do the task more smartly
+```
+Please make sure to update tests as appropriate.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Versions 
+**Note : This is developed in the 
+```
+Python 3.9.0
+Flask 1.1.2
+Werkzeug 1.0
+```
+
+## Contact me
+
+```
+Email: rsfahad97@gmail.com
+```
+
+## License
+**Made by Fahad**
+
+
+## Thanks for visiting
+**Please help me to improve the project further.**
+
