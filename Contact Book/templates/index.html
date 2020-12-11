@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block title %} <title>Contacts Information</title> {% endblock %}
+{% block body %}
+{% if  %}
+<div class="alert alert-success mx-auto d-block" role="alert">
+        <h4 class="alert-heading text-center">Create a note!</h4>
+        <p class="text-center">Thank you for visiting our app. <b>You have not any created notes here.</b></p>
+        <hr>
+        <p class="mb-0 border-1 text-center">Start creating notes from above area. Your notes will be display here</p>
+      </div>
+{% endblock %}
