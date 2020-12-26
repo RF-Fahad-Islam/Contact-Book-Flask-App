@@ -1,0 +1,10 @@
+{
+    "params":{
+        "app_name":"Contacts Book",
+        "local_server":true,
+        "local_server_uri":"mysql://root:@localhost/contacts-book",
+        "pd_uri":"mysql://root:@localhost/contacts-book",
+        "GMAIL_USER":"rfautomaticmailbot@gmail.com",
+        "GMAIL_PASSWORD":"automatebotoffahad"
+    }
+}

@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block title %} <title>Sign-Up</title> {% endblock %}
+{% block body %}
+  <div class="container my-3">
+    {% if success == False %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <b>{{errorFieldName}} : {{errorField}}</b>
+      <hr>
+      <strong>Error : {{error}}</strong>
+      <hr>
+      {{tip}}
+    </div>
+    {% endif %}
+    <div class="card boxShadow">
+      <div class="card-header">
+        <a href="/" class="d-inline-block btn bg-transparent" style="cursor: pointer;"><i class="fa fa-home"
+            style="font-size: x-large;"></i></a>
+        <h5 class="d-inline-block text-center">Sign-Up</h5>
+      </div>
+      <div class="card-body">
+        <form action="/signup" method="POST">
+          <div class="mb-3">
+            <label for="first-name" class="col-form-label">First Name :</label>
+            <input type="text" class="form-control" name="firstname" required id="first-name">
+          </div>
+          <div class="mb-3">
+            <label for="last-name" class="col-form-label">Last Name :</label>
+            <input type="text" class="form-control" name="lastname" required id="last-name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="col-form-label">Email :</label>
+            <input type="email" name="email" required class="form-control" id="email">
+            <div id="emailValidation" class="invalid-feedback">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="col-form-label">Password :</label>
+            <input type="password" class="form-control" id="password" placeholder="Choose a password" name="password"
+              oldautocomplete="remove" autocomplete="off" aria-autocomplete="list">
+          </div>
+
+          <div class="mb-3">
+            <label for="repassword" class="col-form-label">Confirm Password :</label>
+            <input type="password" class="form-control" id="repassword" placeholder="Retype your password"
+              name="repassword" oldautocomplete="remove" autocomplete="off">
+          </div>
+
+          <div class="mb-3">
+            <small>Have a Account - Login Then</small>
+            <a href="/login" type="button" class="btn-sm btn-outline-danger"><i class="fa fa-sign-in"></i> Login</a>
+          </div>
+          <button type="submit" class="btn btn-outline-success">SignUp</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

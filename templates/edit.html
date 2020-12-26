@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block title %} <title>{{params["app_name"]}} Add or Edit</title> {% endblock %}
+{% block body %}
+<div class="container my-2" id="Home">
+    {% if sno == "0" %}
+    <h3 class="text-center my-3 alert alert-heading alert-success">Add New Contact</h3>
+    {% else %}
+    <h3 class="text-center my-3 alert alert-heading alert-{{contact.color}}">Editing Contact-Name : "{{contact.name}}" </h3>
+    {% endif %}
+    <div class="card">
+        <div class="card-body">
+            <form action="/edit/{{sno}}" method="POST">
+                <div class="form-group">
+                    <h5 class="card-title"><i class="fa fa-user-circle-o"></i> Name : </h5>
+                    <input type="text" name="name" value="{{contact.name}}" class="form-control" id="addTitle"
+                        placeholder="Enter the name" required>
+                    <small id="emailHelp" class="form-text text-muted">Name is to identify the person</small>
+                </div>
+
+                <div class="form-group">
+                    <h5 class="card-title"><i class="fa fa-phone"></i> Tel : </h5>
+                    <input type="text" name="tel" value="{{contact.tel}}" class="form-control" id="addTitle"
+                        placeholder="Enter the phone or telephone number" required>
+                    <small id="emailHelp" class="form-text text-muted">Tel is to add the number of the person</small>
+                </div>
+
+                <div class="form-group">
+                    <h5 class="card-title"><i class="fa fa-envelope-o"></i> Email : </h5>
+                    <input type="email" name="email" value="{{contact.email}}" class="form-control" id="addTitle"
+                        placeholder="Enter the email (Optional)">
+                    <small id="emailHelp" class="form-text text-muted">Email is to send the person any mail</small>
+                </div>
+
+                <h5 class="card-title"><i class="fa fa-address-card"></i> Address : </h5>
+                <div class="form-group">
+                    <textarea name="address" class="form-control" placeholder="Add the Address.... (Optional)"
+                        id="addTxt" rows="3">{{contact.address}}</textarea>
+                </div>
+
+                <h5 class="my-3"><i class="fa fa-adjust text-{{contact.color}}"></i> Color</h5>
+                <select class="form-control" aria-selected="true" name="color"
+                    aria-label=".form-select-lg example">
+                    <option value="default" selected>Default</option>
+                    <option value="danger">Danger (Red)</option>
+                    <option value="warning">Warning (Yellow)</option>
+                    <option value="primary">Primary (Blue)</option>
+                    <option value="success">Success (Green)</option>
+                    <option value="info">Info (Sky Blue)</option>
+                    <option value="dark">Dark (Black & White)</option>
+                    <option value="light">Light</option>
+                </select>
+
+                {% if sno == "0" %}
+                <button id="addBtn" class="btn btn-success my-3 float-left"><i class="fa fa-plus-circle"></i> Add Contact</button>
+                <a href="/" id="addBtn" class="btn btn-outline-danger my-3 float-right"><i class="fa fa-ban"></i> Cancel</a href="/">
+                {% else %}
+                <button id="addBtn" class="btn btn-danger my-3 float-left"><i class="fa fa-pencil-square-o"></i> Update Contact</button>
+                <a href="/" id="addBtn" class="btn btn-success my-3 float-right"><i class="fa fa-arrow-left"></i> Go Back</a href="/">
+                {% endif %}
+            </form>
+        </div>
+    </div>
+    <hr>
+</div>
+{% endblock %}

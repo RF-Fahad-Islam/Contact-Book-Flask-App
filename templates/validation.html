@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %} <title>SignUp Validation - {{params["app_name"]}}</title> {% endblock %}
+{% block body %}
+<div class="container my-3 d-flex flex-wrap justify-content-center align-items-center" style="width: 100%; height: 100%;">
+    <div class="alert mx-3 alert-warning d-block my-3 mx-auto" role="alert">
+        <img src="{{url_for('static', filename='contactbook.ico')}}" style="width: 180px;" alt="">
+        <h4 class="alert-heading">Hello {{name}}! OTP Sent to {{email}}</h4>
+        <h6 class="text-muted">We have sent the otp to your email. Enter the otp to signup</h6>
+        <hr>
+        <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+      </div>
+    <div class="card-body mx-3 alert alert-success boxShadow border-danger">
+        <h3 class="text-center card-header alert-success">
+            Validation
+        </h3>
+        <div>
+            <img class="d-block mx-auto my-3" style="height: 100px;" src="{{url_for('static', filename='validation.png')}}" alt="">
+        </div>
+        <form action="/validation/{{email}}" method="POST">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">OTP</span>
+                <input name="userid2" type="text" class="form-control" placeholder="Enter Your UserID" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <button class="btn-lg btn-primary my-3 d-block mx-auto">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
