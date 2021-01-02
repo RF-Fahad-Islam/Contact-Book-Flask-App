@@ -123,8 +123,9 @@ def delete(sno):
                 return render_template("delete-all.html", params=params)
             else:
                 contactInfo = Book1.query.filter_by(sno=sno).first()
-                db.session.delete(contactInfo)
-                db.session.commit()
+                if contactInfo.userid == user.userid:
+                    db.session.delete(contactInfo)
+                    db.session.commit()
                 return redirect("/")
     else:
         return redirect("/login")
@@ -184,7 +185,7 @@ def login():
                 name = f"{user.firstname} {user.lastname}"
                 return redirect("/")
             else:
-                return redirect("/lo, params=paramsgin")
+                return redirect("/login")
         else:
             return redirect("/login")
     return render_template("login.html", params=params)
